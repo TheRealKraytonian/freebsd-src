@@ -25,7 +25,7 @@
 .\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 .\" SUCH DAMAGE.
 .\"
-.Dd February 1, 2025
+.Dd April 26, 2025
 .Dt GSTAT 8
 .Os
 .Sh NAME
@@ -102,23 +102,34 @@ Enable blocks' size statistics.
 These commands are currently recognized if
 .Nm
 is not running in batch mode:
+is not running in batch mode:
 .Bl -tag -width indent
 .It Ic <
 Halve the update interval.
 .It Ic >
 Double the update interval.
+.It Ic ?
+Show a help message describing all interactive commands.
+.It Ic a
+Toggle display of providers that are at least 0.1% busy.
 .It Ic c
 Toggle display of
 .Xr geom 4
 consumers.
+.It Ic d
+Toggle display of statistics for delete operations.
 .It Ic f
-Display only devices with the names matching regular expression filter
-(prompt for filter).
+Display only devices matching a regular expression (prompts for filter).
 .It Ic F
-Remove device filter.
+Remove the device name filter.
+.It Ic o
+Toggle display of statistics for other operations (e.g., flush).
+.It Ic p
+Toggle display of only physical providers.
 .It Ic q
-Quit
-.Nm .
+Quit gstat.
+.It Ic s
+Toggle display of block size statistics.
 .El
 .Sh EXIT STATUS
 .Ex -std
